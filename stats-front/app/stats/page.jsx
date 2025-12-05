@@ -23,7 +23,8 @@ const getHandicapCategory = (hcp, isPro) => {
 export default function StatsPage() {
   const [alumno, setAlumno] = useState("");
   const [palo, setPalo] = useState("");
-  const [fecha, setFecha] = useState("");
+  // Inicializar con la fecha de hoy en formato YYYY-MM-DD
+  const [fecha, setFecha] = useState(new Date().toISOString().split('T')[0]);
   const [file, setFile] = useState(null);
 
   const [isPro, setIsPro] = useState(false);
@@ -201,7 +202,7 @@ export default function StatsPage() {
             type="date"
             value={fecha}
             onChange={(e) => setFecha(e.target.value)}
-            style={{ padding: 10 }}
+            style={{ padding: 10, minWidth: 150 }}
           />
         </div>
 
