@@ -1,0 +1,169 @@
+/* =========================================================
+   🏌️ GLOBAL STYLES — Golf Metrics by @clasesdegolf
+   Sistema visual oscuro + verde WhatsApp
+   ========================================================= */
+
+:root {
+  --bg-main: #0d0d0d;
+  --bg-card: #1a1a1a;
+  --bg-input: #000;
+  --text-main: #ffffff;
+  --text-secondary: #bbbbbb;
+  --text-muted: #777777;
+  --border-color: #333333;
+  --green-main: #25D366; /* Verde WhatsApp */
+  --green-dark: #1ba14e;
+  --danger: #ff4d4d;
+  --radius: 10px;
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: #0a0a0a;
+    --bg-card: #161616;
+  }
+}
+
+/* ---------------------------------------------------------
+   Reset básico estilizado
+   --------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------------------------------------------------
+   Links
+   --------------------------------------------------------- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------
+   Inputs + Selects unificados
+   --------------------------------------------------------- */
+input,
+select {
+  padding: 10px 12px;
+  background: var(--bg-input);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 15px;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--green-main);
+  outline: none;
+}
+
+/* ---------------------------------------------------------
+   Botón principal
+   --------------------------------------------------------- */
+button {
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--green-main);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: var(--green-dark);
+}
+
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------------------------------
+   Contenedores base
+   --------------------------------------------------------- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  border-radius: var(--radius);
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--green-main);
+}
+
+/* ---------------------------------------------------------
+   Utility classes
+   --------------------------------------------------------- */
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mt-40 { margin-top: 40px; }
+
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-12 { gap: 12px; }
+
+.text-muted { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
+
+/* GRID de métricas: SIEMPRE 4 por fila */
+.metrics-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.metric-card {
+  flex: 1 1 calc(25% - 12px);
+  min-width: 160px;
+  background: var(--bg-card);
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.metric-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+.metric-value {
+  font-size: 34px;
+  font-weight: bold;
+  color: var(--green-main);
+}
+.metric-unit {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------------
+   Gráficos (fondo oscuro pro)
+   --------------------------------------------------------- */
+
+.chart-container {
+  width: 100%;
+  height: 340px;
+  margin-top: 30px;
+}
+
